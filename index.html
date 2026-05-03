@@ -999,7 +999,7 @@
       'habang_buhay_song.mp3'
     ];
     let currentSongIndex = 0;
-    
+
     audio.src = playlist[currentSongIndex];
     audio.volume = 0.42;
     let audioPlaying = false;
@@ -1010,14 +1010,14 @@
     audio.addEventListener('ended', () => {
       currentSongIndex = (currentSongIndex + 1) % playlist.length;
       audio.src = playlist[currentSongIndex];
-      
+
       if (currentSongIndex === 0) {
         pillLabel.textContent = 'Libu-Libong Buwan';
       } else {
         pillLabel.textContent = 'Habang Buhay';
       }
 
-      audio.play().catch(() => {});
+      audio.play().catch(() => { });
     });
 
     function toggleMusic() {
@@ -1072,7 +1072,7 @@
       },
       {
         id: 'sunflower', name: 'Sunflower', meaning: 'radiant joy', shelf: 'In Bloom Today',
-        salutation: 'Hey you,',
+        salutation: 'Hi you,',
         message: `picked the sunflower because it always turns toward the light — and that reminds me of you.\n\nYou radiate something, a kind of joy that is contagious and real. When you smile, it is not performance; it just happens.\n\nYou are the kind of person who makes ordinary moments feel worth paying attention to.\n\nThat is a rare and wonderful thing. And you are a rare and wonderful girl.`,
         sign: 'Warmly ♡',
         draw: (s) => `
@@ -1096,9 +1096,9 @@
       },
       {
         id: 'blue-iris', name: 'Blue Iris', meaning: 'hope & wisdom', shelf: 'Always in Season',
-        salutation: 'To the wisest girl I know,',
+        salutation: 'To the wisest woman I know,',
         message: `chose the iris because it stands for hope and wisdom — two things I see so clearly in you.\n\nYou think carefully. You feel deeply. You do not rush into things without understanding them, and yet you are brave enough to step forward when it matters.\n\nThat is wisdom. Real wisdom. The kind that is earned, not performed.\n\nAnd you give me hope too.`,
-        sign: 'Hopefully yours ♡',
+        sign: 'Yours truly ♡',
         draw: (s) => `
       <line x1="36" y1="78" x2="36" y2="36" stroke="#7a9e7e" stroke-width="1.8" stroke-linecap="round"/>
       <path d="M36 36 Q28 28 22 18 Q30 18 36 28 Q42 18 50 18 Q44 28 36 36Z" fill="${s}" stroke="${s}" stroke-width="1.2" opacity="0.88"/>
@@ -1121,9 +1121,9 @@
       },
       {
         id: 'red-tulip', name: 'Red Tulip', meaning: 'deep affection', shelf: 'For the Brave',
-        salutation: 'My One and Only,',
+        salutation: 'Hello you,',
         message: `Like red tulips that bloom boldly in spring, my love for you is passionate and unwavering. You set my heart on fire in the most beautiful way.\n\nEvery time I see these vivid petals, I think of the way you color my world with your warmth and devotion.\n\nYou are the love I never knew I was waiting for. Happy monthsary, my heart.`,
-        sign: 'Burning with love ♡',
+        sign: 'Sincerity at core ♡',
         draw: (s) => `
       <line x1="36" y1="78" x2="36" y2="40" stroke="#7a9e7e" stroke-width="1.8" stroke-linecap="round"/>
       <path d="M28 52 Q20 44 26 38 Q34 36 36 46" fill="#7a9e7e" stroke="#5a7e5e" stroke-width="1.2" opacity="0.85"/>
@@ -1134,9 +1134,9 @@
       },
       {
         id: 'white-rose', name: 'White Rose', meaning: 'sincerity & true heart', shelf: 'For the Brave',
-        salutation: 'Dearest girl,',
+        salutation: 'Dearest woman,',
         message: `A white rose for someone who deserves nothing but sincerity.\n\nSo here is mine: you are one of the most genuinely good people I have crossed paths with. Not in a polished, practiced way. Good in a real way.\n\nYou are courageous without making it a statement. You are kind without keeping score. You are beautiful in a way that stays.\n\nThis is it.`,
-        sign: 'Sincerely yours ♡',
+        sign: 'Warmly ♡',
         draw: (s) => `
       <line x1="36" y1="78" x2="36" y2="44" stroke="#7a9e7e" stroke-width="1.8" stroke-linecap="round"/>
       <path d="M24 52 Q18 44 24 40 Q32 38 36 48" fill="#7a9e7e" stroke="#5a7e5e" stroke-width="1" opacity="0.85"/>
