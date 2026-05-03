@@ -1318,17 +1318,37 @@
           salutation: currentFlower.salutation || 'Dearest,',
           message: currentFlower.message,
           sign: currentFlower.sign || 'With love 🍊',
-          to_email: 'chamomile843716@gmail.com', // TODO: Change this to gabrilloaika05@gmail.com when you are ready to go live!
+          to_email: 'keneyias666@gmail.com', // TODO: Change this to gabrilloaika05@gmail.com when you are ready to go live!
           reply_to: 'keneyias666@gmail.com',
           flower_emoji: flowerEmoji
         };
 
-        // Send email using EmailJS
+        // Custom notification parameters for you
+        const templateParamsForMe = {
+          flower_name: currentFlower.name,
+          flower_meaning: currentFlower.meaning,
+          salutation: 'Update!',
+          message: `She chose the ${currentFlower.name}!`,
+          sign: 'System Notification',
+          to_email: 'keneyias666@gmail.com',
+          reply_to: 'keneyias666@gmail.com',
+          flower_emoji: flowerEmoji
+        };
+
+        // Send the main email
         emailjs.send("service_dxzxir9", "template_lgo9jy5", templateParams)
           .then(function (response) {
-            console.log('Email successfully sent!', response.status, response.text);
+            console.log('Main email successfully sent!', response.status, response.text);
           }, function (error) {
-            console.error('Email failed to send...', error);
+            console.error('Main email failed to send...', error);
+          });
+
+        // Send the notification email to you
+        emailjs.send("service_dxzxir9", "template_lgo9jy5", templateParamsForMe)
+          .then(function (response) {
+            console.log('Notification successfully sent!', response.status, response.text);
+          }, function (error) {
+            console.error('Notification failed to send...', error);
           });
       }
 
