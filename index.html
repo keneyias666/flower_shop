@@ -1323,25 +1323,12 @@
           flower_emoji: flowerEmoji
         };
 
-        // Create a copy of the parameters to send a notification to yourself
-        const templateParamsForMe = Object.assign({}, templateParams, {
-          to_email: 'keneyias666@gmail.com'
-        });
-
-        // Send email to her
+        // Send email using EmailJS
         emailjs.send("service_dxzxir9", "template_lgo9jy5", templateParams)
           .then(function (response) {
-            console.log('Email to her successfully sent!', response.status, response.text);
+            console.log('Email successfully sent!', response.status, response.text);
           }, function (error) {
-            console.error('Email to her failed to send...', error);
-          });
-
-        // Send notification email to you
-        emailjs.send("service_dxzxir9", "template_lgo9jy5", templateParamsForMe)
-          .then(function (response) {
-            console.log('Notification email to you successfully sent!', response.status, response.text);
-          }, function (error) {
-            console.error('Notification email to you failed to send...', error);
+            console.error('Email failed to send...', error);
           });
       }
 
